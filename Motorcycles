@@ -1,0 +1,39 @@
+> par(mfrow = c(1,2))
+> plot(Motorcycles$Bore, Motorcycles$MSRP, xlab = 'Bore', ylab = 'MSRP')
+> plot(Motorcycles$Displacement, Motorcycles$MSRP, xlab = 'Displacement', ylab = 'MSRP')
+> plot(Motorcycles$Clearance, Motorcycles$MSRP, xlab = 'Clearance', ylab = 'MSRP')
+> plot(Motorcycles$Wheelbase, Motorcycles$MSRP, xlab = 'Wheelbase', ylab = 'MSRP')
+
+
+> imod <- lm(MSRP ~ Displacement + Bore, data = Motorcycles)
+> summary(imod)
+
+> imod <- lm(MSRP ~ Displacement + Bore, data = Motorcycles)
+> plot(imod$fitted.values, imod$residuals, xlab = 'Fitted Values', ylab = 'Residuals')
+> abline(0, 0)
+
+
+> par(mfrow = c(1,2))
+> hist(imod$residuals, main = '', xlab = 'Residuals')
+> qqnorm(imod$residuals)
+> qqline(imod$residuals)
+
+> imod <- lm(MSRP ~ Displacement + Bore, data = Motorcycles)
+> summary(imod)
+
+> imod3 <- lm(MSRP ~ Displacement + Bore + Clearance + Wheelbase, data = Motorcycles)
+> summary(imod3)
+
+
+> imod3 <- lm(MSRP ~ Displacement + Bore + Clearance + Wheelbase, data = Motorcycles)
+> plot(imod3$fitted.values, imod3$residuals, xlab = 'Fitted Values', ylab = 'Residuals')
+> abline(0, 0)
+
+
+> imod3 <- lm(MSRP ~ Displacement + Bore + Clearance + Wheelbase, data = Motorcycles)
+> plot(imod3$fitted.values, imod3$residuals, xlab = 'Fitted Values', ylab = 'Residuals')
+> abline(0, 0)
+> par(mfrow = c(1,2))
+> hist(imod3$residuals, main = '', xlab = 'Residuals')
+> qqnorm(imod$residuals)
+> qqline(imod$residuals)
